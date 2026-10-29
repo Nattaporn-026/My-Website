@@ -1,0 +1,396 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #142b4a;
+    --blue: #2f5f98;
+    --text: #263445;
+    --muted: #718096;
+    --border: #dce4ee;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 35px 16px;
+    background: #edf2f8;
+    color: var(--text);
+    font-family: "Sarabun", Tahoma, sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.page {
+    max-width: 1050px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 12px 45px rgba(20, 43, 74, 0.10);
+    overflow: hidden;
+}
+
+/* ส่วนหัว */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 48px 55px;
+    background: linear-gradient(125deg, #142b4a, #234c7b);
+    color: white;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+    color: #bdd6f3;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.hero-subtitle {
+    margin: 10px 0 0;
+    color: #dce9f7;
+    font-size: 17px;
+}
+
+.hero-line {
+    width: 65px;
+    height: 3px;
+    margin: 22px 0;
+    background: #a9c8ed;
+}
+
+.hero-description {
+    max-width: 530px;
+    margin: 0;
+    color: #e4edf8;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* รูปโปรไฟล์จากไฟล์ในโฟลเดอร์ */
+.profile-photo {
+    flex: 0 0 180px;
+    width: 180px;
+    height: 220px;
+    border: 4px solid rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    background: #e8eef6;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* โครงสร้างเนื้อหา */
+.content-grid {
+    display: grid;
+    grid-template-columns: 290px minmax(0, 1fr);
+}
+
+.sidebar {
+    padding: 35px 28px;
+    background: #f7f9fc;
+    border-right: 1px solid var(--border);
+}
+
+.main-column {
+    min-width: 0;
+    padding: 35px 38px;
+}
+
+.section {
+    margin-bottom: 32px;
+    break-inside: avoid;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    position: relative;
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    color: var(--navy);
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.section-title::after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 55px;
+    height: 3px;
+    background: var(--blue);
+    content: "";
+}
+
+/* ข้อมูลติดต่อ */
+.contact-item {
+    margin-bottom: 17px;
+    overflow-wrap: anywhere;
+}
+
+.contact-label {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ทักษะ */
+.subheading {
+    margin: 20px 0 8px;
+    color: var(--blue);
+    font-size: 14px;
+}
+
+.skill-list,
+.detail-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.skill-list li,
+.detail-list li {
+    margin-bottom: 7px;
+    padding-left: 2px;
+}
+
+.skill-list li::marker,
+.detail-list li::marker {
+    color: var(--blue);
+}
+
+/* ภาษา */
+.language-item {
+    margin-bottom: 18px;
+}
+
+.language-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 7px;
+    font-size: 13px;
+}
+
+.language-heading span:last-child {
+    color: var(--muted);
+}
+
+.language-track {
+    height: 6px;
+    border-radius: 10px;
+    background: #dce5f0;
+    overflow: hidden;
+}
+
+.language-level {
+    height: 100%;
+    border-radius: 10px;
+    background: var(--blue);
+}
+
+.language-level.full {
+    width: 100%;
+}
+
+.language-level.partial {
+    width: 5%;
+}
+
+/* ประวัติและผลงาน */
+.body-text {
+    margin: 0;
+    color: #4b596a;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 95px minmax(0, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-date {
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.timeline-content {
+    position: relative;
+    padding-left: 18px;
+    border-left: 2px solid #dce7f4;
+    overflow-wrap: anywhere;
+}
+
+.timeline-content::before {
+    position: absolute;
+    top: 5px;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--blue);
+    content: "";
+}
+
+.timeline-content h3,
+.simple-entry h3 {
+    margin: 0 0 5px;
+    color: var(--navy);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.institution {
+    margin: 0 0 5px;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.simple-entry {
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fbfcfe;
+}
+
+/* ส่วนท้าย */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 35px;
+    border-top: 1px solid var(--border);
+    background: #f7f9fc;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.footer p {
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.footer span {
+    color: var(--navy);
+}
+
+
+/* รูปใบประกาศนียบัตร */
+.certificate-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.certificate-item {
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #dce4ee;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(20, 43, 74, 0.08);
+}
+
+.certificate-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.414 / 1;
+    object-fit: contain;
+    border-radius: 4px;
+    background: #f7f9fc;
+}
+
+@media (max-width: 500px) {
+    .certificate-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* รองรับโทรศัพท์ */
+@media (max-width: 700px) {
+    body {
+        padding: 12px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        padding: 30px 24px;
+        gap: 25px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .profile-photo {
+        align-self: center;
+        flex: 0 0 190px;
+        width: 155px;
+        height: 190px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar,
+    .main-column {
+        padding: 28px 23px;
+    }
+
+    .sidebar {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item {
+        grid-template-columns: 75px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .footer {
+        padding: 16px 20px;
+    }
+}
